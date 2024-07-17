@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            max-width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h5 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #666;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        button:not(:last-child) {
+            margin-right: 10px;
+        }
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function add(){
+            let i1 = parseInt(document.getElementById('i1').value);
+            let i2 = parseInt(document.getElementById('i2').value);
+            let result = i1 + i2;
+            document.getElementById('result').value = result;
+        }
+
+        function sub(){
+            let i1 = parseInt(document.getElementById('i1').value);
+            let i2 = parseInt(document.getElementById('i2').value);
+            let result = i1 - i2;
+            document.getElementById('result').value = result;
+        }
+
+        function mul(){
+            let i1 = parseInt(document.getElementById('i1').value);
+            let i2 = parseInt(document.getElementById('i2').value);
+            let result = i1 * i2;
+            document.getElementById('result').value = result;
+        }
+
+        function div(){
+            let i1 = parseInt(document.getElementById('i1').value);
+            let i2 = parseInt(document.getElementById('i2').value);
+            let result = i1 / i2;
+            document.getElementById('result').value = result;
+        }
+    </script>
+
+    <fieldset>
+        <div>
+            <h5>Calculator</h5><br>
+        </div>    
+
+        <label for="i1">Input 1</label>
+        <input id="i1" type="text"><br>
+
+        <label for="i2">Input 2</label>
+        <input id="i2" type="text"><br>
+
+        <label for="result">Result</label>
+        <input id="result" type="text" readonly><br>
+        
+        <div>
+            <button onclick="add()">Add</button>
+            <button onclick="sub()">Sub</button>
+            <button onclick="mul()">Mul</button>
+            <button onclick="div()">Div</button>
+        </div>
+    </fieldset>
+</body>
+</html>
